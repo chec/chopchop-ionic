@@ -11,13 +11,16 @@ import {
 import "./Home.css";
 import Commerce from "@chec/commerce.js";
 import { useEffect, useState } from "react";
+import ProductListing from "../../components/product-listing/ProductListing";
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const commerce = new Commerce(process.env.REACT_APP_CHEC_PUBLIC_KEY);
-    commerce.products.list().then((products) => setProducts(products));
+    commerce.products
+      .list({ active: 1 })
+      .then((products) => setProducts(products.data));
   }, []);
 
   return (
@@ -35,8 +38,19 @@ const Home: React.FC = () => {
         </IonHeader>
         <IonGrid>
           <IonRow>
-            <IonCol>1 of 2</IonCol>
-            <IonCol>2 of 2</IonCol>
+            {products.map((product) => {
+              return (
+                <IonCol
+                  size="12"
+                  sizeSm="6"
+                  sizeMd="4"
+                  sizeLg="4"
+                  key={product.id}
+                >
+                  <ProductListing product={product} />
+                </IonCol>
+              );
+            })}
           </IonRow>
         </IonGrid>
       </IonContent>

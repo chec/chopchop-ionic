@@ -1,0 +1,7 @@
+{
+  "name": "chopchop",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

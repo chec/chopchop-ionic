@@ -3,6 +3,8 @@ import { IonApp, IonRouterOutlet, setupConfig, isPlatform } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/home/Home";
 
+import "./global.css";
+
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
 
@@ -21,6 +23,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import ProductDetail from "./pages/product/Product";
 
 if (isPlatform("desktop")) {
   setupConfig({
@@ -35,6 +38,7 @@ const App: React.FC = () => (
         <Route exact path="/home">
           <Home />
         </Route>
+        <Route path="/product/:id" component={ProductDetail} />
         <Route exact path="/">
           <Redirect to="/home" />
         </Route>

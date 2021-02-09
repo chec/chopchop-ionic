@@ -1,0 +1,4 @@
+.product-listing .images img {
+  object-fit: cover;
+  border-radius: 0.5rem;
+}

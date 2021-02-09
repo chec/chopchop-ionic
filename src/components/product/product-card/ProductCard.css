@@ -1,0 +1,27 @@
+.product-card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.product-card ion-card {
+  min-height: 200px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.product-card ion-card-header {
+  padding: 6px 0 10px 0;
+  font-size: 1em;
+}
+
+.product-card ion-card-title {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Inter";
+}
+
+.product-card .price {
+  font-size: 16px;
+}

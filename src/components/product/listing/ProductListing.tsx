@@ -1,4 +1,5 @@
 import { IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
+import ProductDescription from "./description/ProductDescription";
 import "./ProductListing.css";
 
 interface ProductListingProps {
@@ -6,15 +7,13 @@ interface ProductListingProps {
 }
 
 const ProductListing: React.FC<ProductListingProps> = ({ product }) => {
-  //   console.log(product);
   const { variants, assets, meta, related_products } = product;
   const images = assets.filter(({ is_image }) => is_image);
-  //   console.log(images);
   return (
     <IonGrid className="product-listing">
       <IonRow>
         <IonCol className="ion-hide-md-down" size="5">
-          Content
+          <ProductDescription product={product} />
         </IonCol>
         <IonCol>
           <IonGrid>
@@ -34,11 +33,29 @@ const ProductListing: React.FC<ProductListingProps> = ({ product }) => {
                 );
               })}
             </IonRow>
+            <IonRow className="meta">
+              {(meta.attributes || []).map((fileName) => {
+                return (
+                  <IonCol
+                    size="6"
+                    sizeSm="6"
+                    sizeMd="6"
+                    sizeLg="6"
+                    sizeXl="6"
+                    key={fileName}
+                  >
+                    <img src={`/assets/product-attributes/${fileName}`} />
+                  </IonCol>
+                );
+              })}
+            </IonRow>
           </IonGrid>
         </IonCol>
       </IonRow>
       <IonRow className="ion-hide-md-up">
-        <IonCol>Content</IonCol>
+        <IonCol>
+          <ProductDescription product={product} />
+        </IonCol>
       </IonRow>
     </IonGrid>
   );

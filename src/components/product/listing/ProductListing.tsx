@@ -1,4 +1,5 @@
 import { IonCard, IonCol, IonGrid, IonRow } from "@ionic/react";
+import { useMemo, useState } from "react";
 import ProductCard from "../product-card/ProductCard";
 import ProductDescription from "./description/ProductDescription";
 import "./ProductListing.css";
@@ -8,13 +9,43 @@ interface ProductListingProps {
 }
 
 const ProductListing: React.FC<ProductListingProps> = ({ product }) => {
-  const { variants, assets = [], meta = {}, related_products = [] } = product;
+  const {
+    variants = [],
+    assets = [],
+    meta = {},
+    related_products = [],
+  } = product;
   const images = assets.filter(({ is_image }) => is_image);
+
+  const initialVariants = useMemo(
+    () =>
+      variants.reduce((all, { id, options }) => {
+        const [firstOption] = options;
+
+        return { ...all, [id]: firstOption.id };
+      }, {}),
+    [product.permalink]
+  );
+
+  const [selectedVariants, setSelectedVariants] = useState(initialVariants);
+
+  const handleVariantChange = ({ target: { id, value } }) => {
+    setSelectedVariants({
+      ...selectedVariants,
+      [id]: value,
+    });
+  };
+
   return (
     <IonGrid className="product-listing">
       <IonRow>
-        <IonCol className="ion-hide-md-down" size="5">
-          <ProductDescription product={product} />
+        <IonCol className="ion-hide-md-down">
+          <ProductDescription
+            product={product}
+            variants={variants}
+            defaultVariants={initialVariants}
+            onVariantChange={handleVariantChange}
+          />
         </IonCol>
         <IonCol>
           <IonGrid>
@@ -55,7 +86,12 @@ const ProductListing: React.FC<ProductListingProps> = ({ product }) => {
       </IonRow>
       <IonRow className="ion-hide-md-up">
         <IonCol>
-          <ProductDescription product={product} />
+          <ProductDescription
+            product={product}
+            variants={variants}
+            defaultVariants={initialVariants}
+            onVariantChange={handleVariantChange}
+          />
         </IonCol>
       </IonRow>
       <IonRow>

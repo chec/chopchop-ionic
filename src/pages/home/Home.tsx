@@ -29,25 +29,16 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>
-            <img src="assets/chopchop.svg" height="28px" width="144px" />
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              <img src="assets/chopchop.svg" height="28px" />
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonGrid>
+        <IonGrid className="home">
           <IonRow>
-            <IonCol className="ion-hide-md-down" size="5">
-              &nbsp;
+            <IonCol className="ion-hide-md-up">
+              <img src="assets/chopchop.svg" />
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol className="ion-hide-md-down">
+              <img src="assets/chopchop.svg" />
             </IonCol>
             <IonCol>
               <IonGrid>
@@ -61,6 +52,7 @@ const Home: React.FC = () => {
                         sizeLg="6"
                         sizeXl="6"
                         key={product.id}
+                        className="ion-no-padding"
                       >
                         <ProductCard product={product} />
                       </IonCol>

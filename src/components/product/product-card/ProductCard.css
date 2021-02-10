@@ -1,5 +1,8 @@
+.product-card {
+  margin: 0 15px;
+}
 .product-card img {
-  height: 300px;
+  height: 450px;
   width: 100%;
   object-fit: cover;
   border-radius: 0.5rem;

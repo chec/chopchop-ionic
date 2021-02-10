@@ -1,5 +1,6 @@
 import {
   IonBackButton,
+  IonButton,
   IonButtons,
   IonCol,
   IonContent,
@@ -13,9 +14,10 @@ import {
 } from "@ionic/react";
 import "./Product.css";
 import Commerce from "@chec/commerce.js";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RouteComponentProps } from "react-router";
 import ProductListing from "../../components/product/listing/ProductListing";
+import { addModal } from "../../utils/modal";
 
 interface ProductDetailPageProps
   extends RouteComponentProps<{
@@ -27,6 +29,7 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
   location: { state },
 }) => {
   const [product, setProduct] = useState((state && state["product"]) || null);
+  const pageRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const commerce = new Commerce(process.env.REACT_APP_CHEC_PUBLIC_KEY);
@@ -36,8 +39,14 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
       .catch((e) => console.error(e));
   }, [match.params.id]);
 
+  useEffect(() => {
+    if (state && state["product"]) {
+      setProduct(state["product"]);
+    }
+  }, [state]);
+
   return (
-    <IonPage>
+    <IonPage ref={pageRef}>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -46,6 +55,15 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
           <IonTitle>
             <img src="assets/chopchop.svg" height="28px" width="144px" />
           </IonTitle>
+          <IonButtons slot="end">
+            <IonButton
+              onClick={(e) => {
+                addModal("cart-modal", pageRef);
+              }}
+            >
+              Cart
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

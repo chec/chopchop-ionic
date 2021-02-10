@@ -24,6 +24,9 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import ProductDetail from "./pages/product/Product";
+import { createElement } from "react";
+import { render } from "react-dom";
+import CartModal from "./pages/cart/Cart";
 
 if (isPlatform("desktop")) {
   setupConfig({
@@ -46,5 +49,20 @@ const App: React.FC = () => (
     </IonReactRouter>
   </IonApp>
 );
+
+class CartModalComponent extends HTMLElement {
+  createModal() {
+    return createElement(CartModal);
+  }
+
+  connectedCallback() {
+    const mountPoint = document.createElement("span");
+    this.appendChild(mountPoint);
+
+    render(this.createModal(), mountPoint);
+  }
+}
+
+window.customElements.define("cart-modal", CartModalComponent);
 
 export default App;

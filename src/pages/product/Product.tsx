@@ -13,7 +13,6 @@ import "./Product.css";
 import Commerce from "@chec/commerce.js";
 import { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router";
-import ProductCard from "../../components/product/listing/ProductListing";
 import ProductListing from "../../components/product/listing/ProductListing";
 
 interface ProductDetailPageProps
@@ -33,7 +32,7 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
       .retrieve(match.params.id)
       .then((product) => setProduct(product))
       .catch((e) => console.error(e));
-  }, []);
+  }, [match.params.id]);
 
   return (
     <IonPage>

@@ -8,7 +8,7 @@ interface ProductListingProps {
 }
 
 const ProductListing: React.FC<ProductListingProps> = ({ product }) => {
-  const { variants, assets, meta, related_products } = product;
+  const { variants, assets = [], meta = {}, related_products = [] } = product;
   const images = assets.filter(({ is_image }) => is_image);
   return (
     <IonGrid className="product-listing">

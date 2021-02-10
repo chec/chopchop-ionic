@@ -1,4 +1,6 @@
 import {
+  IonBackButton,
+  IonButtons,
   IonCol,
   IonContent,
   IonFooter,
@@ -38,6 +40,9 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
           <IonTitle>
             <img src="assets/chopchop.svg" height="28px" width="144px" />
           </IonTitle>
@@ -46,6 +51,9 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
+            <IonButtons slot="start">
+              <IonBackButton />
+            </IonButtons>
             <IonTitle size="large">
               <img src="assets/chopchop.svg" height="28px" />
             </IonTitle>

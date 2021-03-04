@@ -24,45 +24,55 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import ProductDetail from "./pages/product/Product";
-import { createElement } from "react";
-import { render } from "react-dom";
-import CartModal from "./pages/cart/Cart";
+import OrderDetail from "./pages/order/Order";
+import CartShipping from "./pages/cart/CartShipping";
+import CartPayment from "./pages/cart/CartPayment";
+import Cart from "./pages/cart/Cart";
+
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import { LoadingProvider } from "./context/loading";
+import Loading from "./components/global/Loading";
 
 if (isPlatform("desktop")) {
-  setupConfig({
-    mode: "ios",
-  });
+  // setupConfig({
+  //   mode: "ios",
+  // });
 }
+
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route path="/product/:id" component={ProductDetail} />
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
+    <Elements
+      stripe={stripePromise}
+      options={{
+        fonts: [
+          {
+            cssSrc:
+              "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap",
+          },
+        ],
+      }}
+    >
+      <LoadingProvider>
+        <Loading />
+        <IonReactRouter>
+          <IonRouterOutlet>
+            <Route exact path="/home" component={Home} />
+            <Route path="/product/:id" component={ProductDetail} />
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/cart" exact component={Cart} />
+            <Route path="/cart/:id/shipping" exact component={CartShipping} />
+            <Route path="/cart/:id/payment" exact component={CartPayment} />
+            <Route path="/order" exact component={OrderDetail} />
+          </IonRouterOutlet>
+        </IonReactRouter>
+      </LoadingProvider>
+    </Elements>
   </IonApp>
 );
-
-class CartModalComponent extends HTMLElement {
-  createModal() {
-    return createElement(CartModal);
-  }
-
-  connectedCallback() {
-    const mountPoint = document.createElement("span");
-    this.appendChild(mountPoint);
-
-    render(this.createModal(), mountPoint);
-  }
-}
-
-window.customElements.define("cart-modal", CartModalComponent);
 
 export default App;

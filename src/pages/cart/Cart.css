@@ -1,0 +1,151 @@
+.cart-header {
+  --background: rgb(250, 248, 243);
+}
+
+.cart {
+  --ion-background-color: rgb(250, 248, 243);
+}
+
+.cart-items {
+  margin: 8px;
+  padding: 8px;
+}
+
+.cart-items hr {
+  background-color: rgb(200, 200, 200);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.cart-items .item-image {
+  height: 192px;
+  width: 192px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .cart-items .item-image {
+    height: 92px;
+    width: 92px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+}
+
+.cart-items .item-name {
+  margin: 0 8px;
+  padding: 0;
+  font-size: 1.4em;
+  font-style: italic;
+  font-weight: 400;
+  font-family: "EB Garamond";
+}
+
+.cart-items .item-price {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-items .item-quantity {
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.cart-items .item-quantity .label {
+  padding-right: 4px;
+}
+
+.cart-items .item-quantity .action {
+  margin: 0 4px;
+}
+
+.cart-items .item-quantity .amount {
+  padding: 0 4px;
+}
+
+.cart-items .item-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-items .item-actions button {
+  padding: 0 8px;
+  display: block;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 32px;
+  padding-bottom: 22px;
+}
+
+.cart-button {
+  border-radius: 8px;
+  border: 1px solid black;
+  height: 2em;
+  padding: 4px 8px;
+  background-color: transparent;
+}
+
+.cart-button.hover:hover {
+  border-radius: 8px;
+  border: 1px solid white;
+  color: white;
+  height: 2em;
+  padding: 4px 8px;
+  background-color: black;
+}
+
+ion-input input {
+  --border-radius: 8px;
+  padding: 8px 16px !important;
+  border: 1px solid black !important;
+}
+
+.StripeElement {
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  border: 1px solid black !important;
+}
+
+ion-select {
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  border: 1px solid black !important;
+  width: 100%;
+  min-width: 100%;
+}
+
+ion-checkbox {
+  --border-radius: 25%;
+  --background-checked: black;
+  --border-color-checked: black;
+}
+
+ion-radio {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 25px;
+}
+
+ion-footer {
+  background: rgb(250, 248, 243);
+}
+
+.checkout-button {
+  background: rgb(217, 168, 118);
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1.2em;
+}
+
+.error {
+  color: red;
+  font-size: 0.7em;
+}

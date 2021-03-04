@@ -1,33 +1,36 @@
 import {
   IonCard,
-  IonCardContent,
   IonCardHeader,
   IonCardTitle,
   IonCol,
   IonGrid,
   IonRow,
 } from "@ionic/react";
-import { useHistory } from "react-router";
 import "./ProductCard.css";
 
 interface ProductCardProps {
   product: object;
+  onSelectProduct: (product) => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
-  const history = useHistory();
+const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  onSelectProduct,
+}) => {
   return (
     <div className="product-card">
       <IonCard
         className="ion-no-margin ion-no-padding"
         onClick={(e) => {
-          history.push(`/product/${product["id"]}`, {
-            product,
-          });
+          onSelectProduct(product);
         }}
       >
         {product["media"] != null && (
-          <img src={product["media"]["source"]} className="product-image" />
+          <img
+            src={product["media"]["source"]}
+            className="product-image"
+            alt=""
+          />
         )}
         <IonCardHeader>
           <IonCardTitle>

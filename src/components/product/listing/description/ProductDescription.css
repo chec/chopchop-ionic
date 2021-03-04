@@ -1,0 +1,14 @@
+.product-description .name {
+  font-size: 3em;
+}
+
+.product-description .price {
+  font-size: 1.4em;
+}
+
+.product-description .add-to-cart {
+  background: rgb(217, 168, 118);
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1.2em;
+}

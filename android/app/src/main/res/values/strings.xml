@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">chopchop</string>
+    <string name="title_activity_main">chopchop</string>
+    <string name="package_name">com.craigtweedy.chopchop</string>
+    <string name="custom_url_scheme">com.craigtweedy.chopchop</string>
+</resources>

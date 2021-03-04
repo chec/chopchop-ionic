@@ -2,3 +2,7 @@
   object-fit: cover;
   border-radius: 0.5rem;
 }
+
+.product-listing ion-item {
+  --inner-padding-end: 0;
+}

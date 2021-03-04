@@ -14,33 +14,47 @@ interface ProductDescriptionProps {
   product: any;
   variants: any[];
   defaultVariants: object;
+  selectedVariants: object;
   onVariantChange: (any) => void;
+  onAddItemToBag: (any) => void;
 }
 
 const ProductDescription: React.FC<ProductDescriptionProps> = ({
   product,
   variants = [],
   defaultVariants = {},
+  selectedVariants = {},
   onVariantChange,
+  onAddItemToBag,
 }) => {
   return (
     <div className="product-description">
-      <h1>{product["name"]}</h1>
+      <h1 className="font-serif italic name">{product["name"]}</h1>
       <IonGrid className="ion-no-padding">
         <IonRow>
-          <IonCol>{product["price"]["formatted_with_symbol"]}</IonCol>
-          <IonCol className="ion-text-end">Add to bag</IonCol>
+          <IonCol className="price">
+            {product["price"]["formatted_with_symbol"]}
+          </IonCol>
+          <IonCol className="ion-text-end">
+            <button onClick={onAddItemToBag} className="add-to-cart">
+              Add to bag
+            </button>
+          </IonCol>
         </IonRow>
         {variants.map(({ options, ...variant }) => {
           return (
             <IonRow key={variant["id"]}>
               <IonCol>
-                <IonItem lines="none" className="variant ion-no-padding">
-                  <IonLabel>{variant["name"]}</IonLabel>
+                <IonItem
+                  lines="none"
+                  className="variant ion-no-padding ion-no-margin"
+                >
                   <IonSelect
+                    placeholder="Select variant"
                     id={variant["id"]}
                     onIonChange={onVariantChange}
                     defaultValue={defaultVariants[variant["id"]]}
+                    value={selectedVariants[variant["id"]]}
                   >
                     {options.map((option) => {
                       return (
@@ -53,6 +67,7 @@ const ProductDescription: React.FC<ProductDescriptionProps> = ({
                       );
                     })}
                   </IonSelect>
+                  <IonLabel>{variant["name"]}</IonLabel>
                 </IonItem>
               </IonCol>
             </IonRow>
@@ -62,6 +77,7 @@ const ProductDescription: React.FC<ProductDescriptionProps> = ({
           <IonCol>
             <div
               dangerouslySetInnerHTML={{ __html: product.description }}
+              className="prose"
             ></div>
           </IonCol>
         </IonRow>

@@ -1,0 +1,121 @@
+.cart-item {
+  /* py-3 md:py-4 lg:py-5 flex md:items-end space-x-3 md:space-x-4 lg:space-x-5 border-b border-black */
+  display: flex;
+  margin-left: 10px;
+}
+
+.cart-item .image {
+  /* w-24 h-24 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded relative */
+  position: relative;
+  width: 96px;
+}
+
+.cart-item .info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.cart-item .info .name p {
+  font-size: 1.4em;
+  line-height: 0;
+}
+
+.cart-item .secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.cart-item .secondary .price {
+  /* text-lg md:text-xl lg:text-2xl */
+}
+
+.cart-item .secondary .actions-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item .secondary .actions-container .actions {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cart-item .secondary .actions-container .actions span:first-child {
+  padding: 0 10px 0 0;
+}
+
+.cart-item .secondary .actions-container .actions span:not(:first-child) {
+  padding: 0 10px;
+}
+
+@media (min-width: 576px) {
+  .cart-item {
+    /* py-3 md:py-4 lg:py-5 flex md:items-end space-x-3 md:space-x-4 lg:space-x-5 border-b border-black */
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .cart-item .image {
+    /* w-24 h-24 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded relative */
+    position: relative;
+    width: 192px;
+  }
+
+  .cart-item .info {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-left: 10px;
+  }
+
+  .cart-item .info .name {
+    flex-grow: 1;
+    /* text-xl md:text-2xl lg:text-3xl */
+  }
+
+  .cart-item .info .name p {
+    font-size: 1.6em;
+  }
+
+  .cart-item .secondary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: flex-end;
+  }
+
+  .cart-item .secondary .price {
+    /* text-lg md:text-xl lg:text-2xl */
+  }
+
+  .cart-item .secondary .actions-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .cart-item .secondary .actions-container .actions {
+    /* md:pb-4 lg:pb-5 inline-flex items-center */
+    display: inline-flex;
+    align-items: center;
+    padding-bottom: 24px;
+  }
+
+  .cart-item .secondary .actions-container .actions span:first-child {
+    padding: 0 10px 0 0;
+  }
+
+  .cart-item .secondary .actions-container .actions span:not(:first-child) {
+    padding: 0 10px;
+  }
+}

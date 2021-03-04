@@ -1,0 +1,49 @@
+.header {
+  --background: rgb(250, 248, 243);
+}
+
+.page {
+  --ion-background-color: rgb(250, 248, 243);
+}
+
+.thanks-container {
+  margin-top: 44px;
+}
+
+.thanks-info {
+  padding: 44px;
+}
+
+.thanks-info h3 {
+  font-size: 64px;
+}
+
+.card {
+  margin: 44px;
+  padding: 0 44px;
+  background: white;
+  box-shadow: -2.63365px 5.92572px 8.55938px rgba(0, 0, 0, 0.25);
+
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: -25deg;
+  --tw-skew-x: 0;
+  --tw-skew-y: 12deg;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.card .thanks {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card .thanks span {
+  align-self: center;
+  font-size: 0.7em;
+  margin-left: 12px;
+}

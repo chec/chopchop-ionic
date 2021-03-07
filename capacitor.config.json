@@ -1,5 +1,5 @@
 {
-  "appId": "com.craigtweedy.chopchop",
+  "appId": "com.chec.chopchop",
   "appName": "chopchop",
   "bundledWebRuntime": false,
   "npmClient": "yarn",

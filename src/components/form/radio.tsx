@@ -1,4 +1,4 @@
-import { IonRadio, IonLabel, IonRadioGroup, IonItem } from "@ionic/react";
+import { IonItem, IonLabel, IonRadio, IonRadioGroup } from "@ionic/react";
 import { Controller } from "react-hook-form";
 import "./radio.css";
 

@@ -1,3 +1,4 @@
+import Commerce from "@chec/commerce.js";
 import {
   IonCol,
   IonContent,
@@ -6,14 +7,13 @@ import {
   IonPage,
   IonRow,
 } from "@ionic/react";
-import Commerce from "@chec/commerce.js";
 import { useEffect, useRef, useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import { RouteComponentProps, useHistory } from "react-router";
-import "./Cart.css";
-import { useForm, FormProvider } from "react-hook-form";
-import FormRadio from "../../components/form/radio";
 import AddressFields from "../../components/cart/address";
+import FormRadio from "../../components/form/radio";
 import { Header } from "../../components/global/Header";
+import "./Cart.css";
 
 interface CartShippingPageProps
   extends RouteComponentProps<{

@@ -1,6 +1,5 @@
 import { IonInput } from "@ionic/react";
 import { Controller } from "react-hook-form";
-
 import FormError from "./error";
 
 function FormInput({

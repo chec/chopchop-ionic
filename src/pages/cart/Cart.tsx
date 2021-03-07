@@ -1,10 +1,10 @@
-import { IonContent, IonFooter, IonList, IonPage } from "@ionic/react";
 import Commerce from "@chec/commerce.js";
+import { IonContent, IonFooter, IonList, IonPage } from "@ionic/react";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import "./Cart.css";
 import { CartItem } from "../../components/cart/item";
 import { Header } from "../../components/global/Header";
+import "./Cart.css";
 
 const Cart: React.FC = () => {
   const [cart, setCart] = useState(null);

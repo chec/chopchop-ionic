@@ -1,11 +1,11 @@
-import { IonContent, IonPage } from "@ionic/react";
-import "./Product.css";
 import Commerce from "@chec/commerce.js";
+import { IonContent, IonPage } from "@ionic/react";
 import { useEffect, useRef, useState } from "react";
 import { RouteComponentProps, useHistory } from "react-router";
-import ProductListing from "../../components/product/listing/ProductListing";
 import { Footer } from "../../components/global/Footer";
 import { Header } from "../../components/global/Header";
+import ProductListing from "../../components/product/listing/ProductListing";
+import "./Product.css";
 
 interface ProductDetailPageProps
   extends RouteComponentProps<{

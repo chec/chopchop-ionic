@@ -1,8 +1,6 @@
 import { IonItem, IonLabel, IonSelect, IonSelectOption } from "@ionic/react";
 import { Controller } from "react-hook-form";
-
 import FormError from "./error";
-
 import "./select.css";
 
 function FormSelect({

@@ -7,12 +7,12 @@ import {
   IonPage,
   IonRow,
 } from "@ionic/react";
-import "./Order.css";
+import { chevronBack } from "ionicons/icons";
 import { useRef } from "react";
 import { RouteComponentProps, useHistory } from "react-router";
 import { Footer } from "../../components/global/Footer";
-import { chevronBack } from "ionicons/icons";
 import { Header } from "../../components/global/Header";
+import "./Order.css";
 
 const OrderDetail: React.FC<RouteComponentProps> = () => {
   const history = useHistory();

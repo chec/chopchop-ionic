@@ -1,11 +1,11 @@
-import { IonCol, IonContent, IonGrid, IonPage, IonRow } from "@ionic/react";
-import "./Home.css";
 import Commerce from "@chec/commerce.js";
+import { IonCol, IonContent, IonGrid, IonPage, IonRow } from "@ionic/react";
 import { useEffect, useState } from "react";
-import ProductCard from "../../components/product/product-card/ProductCard";
-import { Footer } from "../../components/global/Footer";
 import { RouteComponentProps } from "react-router";
+import { Footer } from "../../components/global/Footer";
 import { Header } from "../../components/global/Header";
+import ProductCard from "../../components/product/product-card/ProductCard";
+import "./Home.css";
 
 const Home: React.FC<RouteComponentProps> = ({ history }) => {
   const [products, setProducts] = useState([]);

@@ -1,3 +1,4 @@
+import Commerce from "@chec/commerce.js";
 import {
   IonCol,
   IonContent,
@@ -7,20 +8,20 @@ import {
   IonRow,
 } from "@ionic/react";
 import {
-  CardNumberElement,
-  CardExpiryElement,
   CardCvcElement,
+  CardExpiryElement,
+  CardNumberElement,
+  useElements,
+  useStripe,
 } from "@stripe/react-stripe-js";
-import { useStripe, useElements } from "@stripe/react-stripe-js";
-import Commerce from "@chec/commerce.js";
 import { useEffect, useState } from "react";
-import { RouteComponentProps, useHistory } from "react-router";
 import { FormProvider, useForm } from "react-hook-form";
-import FormInput from "../../components/form/input";
-import FormCheckbox from "../../components/form/checkbox";
+import { RouteComponentProps, useHistory } from "react-router";
 import AddressFields from "../../components/cart/address";
-import { useLoader } from "../../context/loading";
+import FormCheckbox from "../../components/form/checkbox";
+import FormInput from "../../components/form/input";
 import { Header } from "../../components/global/Header";
+import { useLoader } from "../../context/loading";
 
 interface CartPaymentPageProps
   extends RouteComponentProps<{

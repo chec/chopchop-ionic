@@ -24,6 +24,7 @@ ChopChop is our beautifully designed, elegantly developed demo store and starter
 * [Ionic Framework](https://ionicframework.com/)
 * [Commerce.js](https://commercejs.com)
 * [Stripe](https://stripe.com)
+* [Capacitor](https://capacitorjs.com)
 
 ### Manual installation
 
@@ -38,13 +39,33 @@ Once the server is running, it'll open up in your browser automatically, start e
 
 ### Testing on native
 
-To get the project running natively, run one of the following commands. 
+This project can be built for either iOS or Android using Capacitor. Capacitor makes it easy to build web applications that can be ran natively.
 
-`ionic capacitor run ion -l --external`
+Ensure capacitor is included in the project by running:
+```
+npx cap init [appName] [appId]
+```
 
-`ionic capacitor run android -l --external`
+Also, ensure the project has been built once by running:
+```
+ionic build
+```
+
+Next, add a desired platform to the project:
+```
+npx cap add ios
+npx cap add android
+```
+
+From here, we can run the project natively using one of the following commands:
+```
+ionic capacitor run ion -l --external
+ionic capacitor run android -l --external
+```
 
 Ionic will build the project in your platform of choice, and then you can run it in a simulator or on device from that point.
+
+> If you find that your project has not updated correctly in the native build, run `npx cap copy` to ensure the native outputs have the latest built code.
 
 ## License
 

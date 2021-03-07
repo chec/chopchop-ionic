@@ -1,10 +1,10 @@
+import Commerce from "@chec/commerce.js";
 import { IonCol, IonGrid, IonRow, IonToast } from "@ionic/react";
 import { useMemo, useState } from "react";
+import { useLoader } from "../../../context/loading";
 import ProductCard from "../product-card/ProductCard";
 import ProductDescription from "./description/ProductDescription";
 import "./ProductListing.css";
-import Commerce from "@chec/commerce.js";
-import { useLoader } from "../../../context/loading";
 
 interface ProductListingProps {
   product: any;

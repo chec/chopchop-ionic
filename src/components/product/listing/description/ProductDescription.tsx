@@ -7,7 +7,6 @@ import {
   IonSelect,
   IonSelectOption,
 } from "@ionic/react";
-
 import "./ProductDescription.css";
 
 interface ProductDescriptionProps {

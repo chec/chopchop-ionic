@@ -5,14 +5,14 @@
 A CommerceJS, Ionic, React & Stripe powered, open source native enabled storefront, cart and checkout experience.
 </p>
 <p align="center">
-  <a href="https://github.com/chec/[repourl]/blob/main/LICENSE.md">
+  <a href="https://github.com/chec/chopchop-ionic/blob/main/LICENSE.md">
     <img src="https://img.shields.io/npm/l/@chec/commerce.js.svg" alt="License" />
   </a>
   <br>
   <a href="https://commercejs.com">commercejs.com</a> | <a href="https://twitter.com/commercejs">@commercejs</a> | <a href="http://slack.commercejs.com">Slack</a>
   <br />
   <br />
-    <img src="[demo image]" width="600" />
+    <img src="https://github.com/chec/chopchop-ionic/blob/main/chopchop-screenshots.png" width="600" />
 </p>
 
 ## Introduction

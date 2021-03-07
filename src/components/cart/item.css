@@ -46,6 +46,14 @@
   align-items: center;
 }
 
+.cart-item .secondary .actions-container .action {
+  color: black;
+}
+
+.cart-item .secondary .actions-container .action:hover {
+  color: white;
+}
+
 .cart-item .secondary .actions-container .actions span:first-child {
   padding: 0 10px 0 0;
 }

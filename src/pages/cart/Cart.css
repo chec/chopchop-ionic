@@ -62,6 +62,7 @@
 
 .cart-items .item-quantity .action {
   margin: 0 4px;
+  color: black;
 }
 
 .cart-items .item-quantity .amount {

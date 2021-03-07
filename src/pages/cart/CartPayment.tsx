@@ -1,15 +1,10 @@
 import {
-  IonBackButton,
-  IonButtons,
   IonCol,
   IonContent,
   IonFooter,
   IonGrid,
-  IonHeader,
   IonPage,
   IonRow,
-  IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import {
   CardNumberElement,
@@ -25,6 +20,7 @@ import FormInput from "../../components/form/input";
 import FormCheckbox from "../../components/form/checkbox";
 import AddressFields from "../../components/cart/address";
 import { useLoader } from "../../context/loading";
+import { Header } from "../../components/global/Header";
 
 interface CartPaymentPageProps
   extends RouteComponentProps<{
@@ -241,21 +237,7 @@ const CartPayment: React.FC<CartPaymentPageProps> = ({
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar className="cart-header">
-          <IonButtons slot="start">
-            <IonBackButton />
-          </IonButtons>
-          <IonTitle>
-            <img
-              src="assets/chopchop.svg"
-              height="28px"
-              width="144px"
-              alt="Chop Chop"
-            />
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header hasBackButton={true} toolbarClassName="cart-header" />
       <IonContent fullscreen className="cart">
         <FormProvider {...methods}>
           <form onSubmit={methods.handleSubmit(onSubmit)}>

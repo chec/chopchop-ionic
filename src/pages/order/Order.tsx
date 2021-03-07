@@ -1,21 +1,18 @@
 import {
   IonButton,
-  IonButtons,
   IonCol,
   IonContent,
   IonGrid,
-  IonHeader,
   IonIcon,
   IonPage,
   IonRow,
-  IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import "./Order.css";
 import { useRef } from "react";
 import { RouteComponentProps, useHistory } from "react-router";
 import { Footer } from "../../components/global/Footer";
 import { chevronBack } from "ionicons/icons";
+import { Header } from "../../components/global/Header";
 
 const OrderDetail: React.FC<RouteComponentProps> = () => {
   const history = useHistory();
@@ -23,30 +20,21 @@ const OrderDetail: React.FC<RouteComponentProps> = () => {
 
   return (
     <IonPage ref={pageRef}>
-      <IonHeader>
-        <IonToolbar className="header">
-          <IonButtons slot="start">
-            <IonButton
-              onClick={() => {
-                history.replace("/");
-              }}
-            >
-              <IonIcon slot="icon-only" icon={chevronBack} />
-            </IonButton>
-          </IonButtons>
-          <IonTitle size="large">
-            <img src="assets/chopchop.svg" height="28px" alt="Chop Chop" />
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header
+        hasBackButton={true}
+        toolbarClassName="header"
+        backButton={
+          <IonButton
+            onClick={() => {
+              history.replace("/");
+            }}
+          >
+            <IonIcon slot="icon-only" icon={chevronBack} />
+          </IonButton>
+        }
+      />
       <IonContent fullscreen className="page">
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">
-              <img src="assets/chopchop.svg" height="28px" alt="Chop Chop" />
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <Header large={true} />
         <IonGrid className="thanks-container">
           <IonRow>
             <IonCol size="12" sizeSm="12" sizeMd="12" sizeLg="6" sizeXl="6">

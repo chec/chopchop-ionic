@@ -1,23 +1,10 @@
-import {
-  IonBackButton,
-  IonButtons,
-  IonContent,
-  IonFooter,
-  IonGrid,
-  IonHeader,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonPage,
-  IonRow,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
+import { IonContent, IonFooter, IonList, IonPage } from "@ionic/react";
 import Commerce from "@chec/commerce.js";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import "./Cart.css";
 import { CartItem } from "../../components/cart/item";
+import { Header } from "../../components/global/Header";
 
 const Cart: React.FC = () => {
   const [cart, setCart] = useState(null);
@@ -60,21 +47,7 @@ const Cart: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar className="cart-header">
-          <IonButtons slot="start">
-            <IonBackButton />
-          </IonButtons>
-          <IonTitle>
-            <img
-              src="assets/chopchop.svg"
-              height="28px"
-              width="144px"
-              alt="Chop Chop"
-            />
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header hasBackButton={true} toolbarClassName="cart-header" />
       <IonContent fullscreen className="cart">
         <IonList className="cart-items" lines="none">
           {cart &&
@@ -87,49 +60,6 @@ const Cart: React.FC = () => {
                     incrementQuantity={() => increaseQuantity(item)}
                     removeItem={() => removeItem(item)}
                   />
-                  {/* <IonItem key={item.id}>
-                    {item.media && (
-                      <img
-                        src={item.media.source}
-                        className="item-image"
-                        alt=""
-                      />
-                    )}
-                    <IonLabel className="ion-align-self-end item-name">
-                      {item.name}
-                    </IonLabel>
-                    <div className="ion-align-self-end">
-                      <IonGrid slot="end">
-                        <IonRow className="item-price">
-                          {item.line_total.formatted_with_symbol}
-                        </IonRow>
-                        <IonRow className="item-quantity">
-                          <span className="label">Quantity: </span>
-                          <button
-                            onClick={(e) => decreaseQuantity(item)}
-                            className="action cart-button hover"
-                          >
-                            -
-                          </button>{" "}
-                          <span className="amount">{item.quantity} </span>
-                          <button
-                            onClick={(e) => increaseQuantity(item)}
-                            className="action cart-button hover"
-                          >
-                            +
-                          </button>
-                        </IonRow>
-                        <IonRow className="item-actions">
-                          <button
-                            onClick={(e) => removeItem(item)}
-                            className="cart-button"
-                          >
-                            Remove
-                          </button>
-                        </IonRow>
-                      </IonGrid>
-                    </div>
-                  </IonItem> */}
                   <hr />
                 </div>
               );

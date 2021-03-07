@@ -1,19 +1,11 @@
-import {
-  IonBackButton,
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
+import { IonContent, IonPage } from "@ionic/react";
 import "./Product.css";
 import Commerce from "@chec/commerce.js";
 import { useEffect, useRef, useState } from "react";
 import { RouteComponentProps, useHistory } from "react-router";
 import ProductListing from "../../components/product/listing/ProductListing";
 import { Footer } from "../../components/global/Footer";
+import { Header } from "../../components/global/Header";
 
 interface ProductDetailPageProps
   extends RouteComponentProps<{
@@ -44,46 +36,9 @@ const ProductDetail: React.FC<ProductDetailPageProps> = ({
 
   return (
     <IonPage ref={pageRef}>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot="start">
-            <IonBackButton defaultHref="/" />
-          </IonButtons>
-          <IonTitle>
-            <img
-              src="assets/chopchop.svg"
-              height="28px"
-              width="144px"
-              alt="Chop Chop"
-            />
-          </IonTitle>
-          <IonButtons slot="end">
-            <IonButton
-              onClick={(e) => {
-                history.push("/cart");
-              }}
-            >
-              <img
-                src="assets/cart.svg"
-                height="28px"
-                width="44px"
-                alt="Chop Chop"
-              />
-            </IonButton>
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
+      <Header hasBackButton={true} hasCartButton={true} />
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonButtons slot="start">
-              <IonBackButton />
-            </IonButtons>
-            <IonTitle size="large">
-              <img src="assets/chopchop.svg" height="28px" alt="Chop Chop" />
-            </IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <Header large={true} />
         {product && (
           <ProductListing
             product={product}

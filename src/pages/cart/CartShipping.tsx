@@ -1,15 +1,10 @@
 import {
-  IonBackButton,
-  IonButtons,
   IonCol,
   IonContent,
   IonFooter,
   IonGrid,
-  IonHeader,
   IonPage,
   IonRow,
-  IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import Commerce from "@chec/commerce.js";
 import { useEffect, useRef, useState } from "react";
@@ -18,6 +13,7 @@ import "./Cart.css";
 import { useForm, FormProvider } from "react-hook-form";
 import FormRadio from "../../components/form/radio";
 import AddressFields from "../../components/cart/address";
+import { Header } from "../../components/global/Header";
 
 interface CartShippingPageProps
   extends RouteComponentProps<{
@@ -167,21 +163,7 @@ const CartShipping: React.FC<CartShippingPageProps> = ({ match }) => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar className="cart-header">
-          <IonButtons slot="start">
-            <IonBackButton />
-          </IonButtons>
-          <IonTitle>
-            <img
-              src="assets/chopchop.svg"
-              height="28px"
-              width="144px"
-              alt="Chop Chop"
-            />
-          </IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header hasBackButton={true} toolbarClassName="cart-header" />
       <IonContent fullscreen className="cart">
         <FormProvider {...methods}>
           <form ref={form} onSubmit={methods.handleSubmit(onSubmit)}>

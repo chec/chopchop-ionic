@@ -35,9 +35,9 @@ import { LoadingProvider } from "./context/loading";
 import Loading from "./components/global/Loading";
 
 if (isPlatform("desktop")) {
-  // setupConfig({
-  //   mode: "ios",
-  // });
+  setupConfig({
+    mode: "ios",
+  });
 }
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);

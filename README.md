@@ -17,7 +17,7 @@ A CommerceJS, Ionic, React & Stripe powered, open source native enabled storefro
 
 ## Introduction
 
-ChopChop is our beautifully designed, elegantly developed demo store and starter kit that sells fine tools for thoughtful cooks. We’ve created a premium brand with a commerce experience to match, ready for native platforms. Read more about this resource on the [Commerce.js blog]([article-URL]).
+ChopChop is our beautifully designed, elegantly developed demo store and starter kit that sells fine tools for thoughtful cooks. We’ve created a premium brand with a commerce experience to match, now ready to be use natively accross iOS and Android. Read more about this resource on the [Commerce.js blog]([https://commercejs.com/blog/chopchop-nextjs-starter-commerce]).
 
 ## 🥞 ChopChop Native Stack
 
